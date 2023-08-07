@@ -83,7 +83,6 @@ body{
     border: 5px solid #818181;
     background-color: #818181;
     color: white;
-    box-shadow: 5px 5px 15px #0080FF; 
 }
 
 .player1:hover{
@@ -103,15 +102,13 @@ body{
     border-radius: 30px;
     border: 5px solid #818181;
     background-color: #818181;
-    box-shadow: 5px 5px 15px #FF4B4B; 
     color: white;
 }
 
 .player2:hover{
     border: 5px solid #FF4B4B;
     background-color: #FF4B4B;
-    color: white; 
-    box-shadow: 5px 5px 15px #7D0000; 
+    color: white;
 }
 
 .player{
