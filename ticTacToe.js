@@ -81,8 +81,12 @@ function checkForWin() {
   if (moveCounter >= 9) {
     gameInfo.style.display = "block";
   } else {
-    console.log("Próbuj dalej pedale");
+    console.log("Próbuj dalej jeszcze nikt nie wygrał");
   }
+}
+
+function playerBackgorundColor(){
+  
 }
 
 
