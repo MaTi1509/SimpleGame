@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="ticTacToe.css" />
+    <title>Game</title>
+  </head>
+  <body>
+    <div class="containerTitle">
+      <div class="itemTitle">Gra w kolko i krzyzyk</div>
+    </div>
+    <div class="container">
+      <div class="player1">
+        <p class="player">Gracz 1</p>
+        <p class="symbol">Symbol</p>
+        <p class="player1symbol">O</p>
+        <p class="points">Punkty</p>
+        <p class="player1Counter" id="counterPlayer1">0</p>
+      </div>
+      <div class="boardContainer">
+        <div class="firstRow">
+          <div class="item" id="item1">
+            <p class="symbolItem" id="item1Symbol">P1</p>
+          </div>
+          <div class="item" id="item2">
+            <p class="symbolItem" id="item2Symbol">P2</p>
+          </div>
+          <div class="item" id="item3">
+            <p class="symbolItem" id="item3Symbol">P3</p>
+          </div>
+        </div>
+        <div class="secondRow">
+          <div class="item" id="item4">
+            <p class="symbolItem" id="item4Symbol">P4</p>
+          </div>
+          <div class="item" id="item5">
+            <p class="symbolItem" id="item5Symbol">P5</p>
+          </div>
+          <div class="item" id="item6">
+            <p class="symbolItem" id="item6Symbol">P6</p>
+          </div>
+        </div>
+        <div class="thirdRow">
+          <div class="item" id="item7">
+            <p class="symbolItem" id="item7Symbol">P7</p>
+          </div>
+          <div class="item" id="item8">
+            <p class="symbolItem" id="item8Symbol">P8</p>
+          </div>
+          <div class="item" id="item9">
+            <p class="symbolItem" id="item9Symbol">P9</p>
+          </div>
+        </div>
+      </div>
+      <div class="player2">
+        <p class="player">Gracz 2</p>
+        <p class="symbol">Symbol</p>
+        <p class="player2symbol">X</p>
+        <p class="points">Punkty</p>
+        <p class="player2Counter">0</p>
+      </div>
+    </div>
+    <div class="gameInfo" id="gameInfo">
+      <div class="gameInfoText">
+        <p>Wykorzystano 9 ruchów zresetuj plansze</p>
+        <div onclick="closeGameInfo()" id="resetButton" class="resetButton">
+          <p class="resetText">Reset planszy</p>
+        </div>
+      </div>
+  
+    </div>
+    <div class="winInfo" id="winInfo">
+      <div class="winInfoText" id="winInfoText">
+        <p id="text">Wygrana zresetuj plansze</p>
+        <div onclick="closeWinInfo()" id="resetButton" class="resetButton">
+          <p class="resetText">Reset planszy</p>
+        </div>
+      </div>
+    </div>
+    </body>
+    <script src="ticTacToe.js"></script>
+  </body>
+</html>
