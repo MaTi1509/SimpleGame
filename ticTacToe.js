@@ -121,4 +121,3 @@ setSymbol(item6Button, item6Symbol);
 setSymbol(item7Button, item7Symbol);
 setSymbol(item8Button, item8Symbol);
 setSymbol(item9Button, item9Symbol);
-resetSymbols();
