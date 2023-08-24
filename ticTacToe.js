@@ -45,29 +45,46 @@ function toggleSymbol() {
 }
 
 function checkForWin() {
-  if (
-    item1Symbol.textContent === currentSymbol &&
-    item2Symbol.textContent === currentSymbol &&
-    item3Symbol.textContent === currentSymbol &&
-    (currentSymbol === "X" || currentSymbol === "O")
-  ) {
-    console.log("Wygrana");
-    isWin = true;
-    if (currentSymbol === "X") {
-      console.log("wygrał gracz 2");
-      winPlayer = "Gracz 2";
-      Player2Points ++;
-      player2Counter.textContent = Player2Points;
-    } else {
-      console.log("wygrał gracz 1");
-      winPlayer = "Gracz 1";
-      Player1Points ++;
-      player1Counter.textContent = Player1Points;
+  const linesToCheck = [
+    [item1Symbol, item2Symbol, item3Symbol],
+    [item4Symbol, item5Symbol, item6Symbol],
+    [item7Symbol, item8Symbol, item9Symbol],
+    [item1Symbol, item4Symbol, item7Symbol],
+    [item2Symbol, item5Symbol, item8Symbol],
+    [item3Symbol, item6Symbol, item9Symbol],
+    [item1Symbol, item5Symbol, item9Symbol],
+    [item3Symbol, item5Symbol, item7Symbol]
+  ];
+
+  for (const line of linesToCheck) {
+    if (
+      line.every((symbol) => symbol.textContent === currentSymbol) &&
+      (currentSymbol === "X" || currentSymbol === "O")
+    ) {
+      console.log("Wygrana");
+      isWin = true;
+      if (currentSymbol === "X") {
+        console.log("wygrał gracz 2");
+        winPlayer = "Gracz 2";
+        Player2Points++;
+        player2Counter.textContent = Player2Points;
+      } else {
+        console.log("wygrał gracz 1");
+        winPlayer = "Gracz 1";
+        Player1Points++;
+        player1Counter.textContent = Player1Points;
+      }
+      return; 
     }
+  }
+
+  if (moveCounter >= 9) {
+    gameInfo.style.display = "block";
   } else {
     console.log("Próbuj dalej pedale");
   }
 }
+
 
 function setSymbol(itemButton, itemSymbol) {
   itemButton.addEventListener("click", () => {
@@ -88,14 +105,24 @@ function setSymbol(itemButton, itemSymbol) {
 }
 
 function resetSymbol() {
-  const itemSymbols = [item1Symbol, item2Symbol, item3Symbol, item4Symbol, item5Symbol, item6Symbol, item7Symbol, item8Symbol, item9Symbol];
+  const itemSymbols = [
+    item1Symbol,
+    item2Symbol,
+    item3Symbol,
+    item4Symbol,
+    item5Symbol,
+    item6Symbol,
+    item7Symbol,
+    item8Symbol,
+    item9Symbol,
+  ];
   const fillSymbols = ["P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8", "P9"];
 
   for (let index = 0; index < itemSymbols.length; index++) {
     itemSymbols[index].textContent = fillSymbols[index];
     itemSymbols[index].style.color = "white";
-  };
-  toggleSymbol(); 
+  }
+  toggleSymbol();
 }
 
 function closeGameInfo() {
