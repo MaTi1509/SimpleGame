@@ -123,8 +123,8 @@ function closeGameInfo() {
 function closeWinInfo() {
   resetSymbol();
   moveCounter = 0;
-  isWin = false;
   winInfo.style.display = "none";
+  isWin = false;
 }
 
 setSymbol(item1Button, item1Symbol);
@@ -136,4 +136,3 @@ setSymbol(item6Button, item6Symbol);
 setSymbol(item7Button, item7Symbol);
 setSymbol(item8Button, item8Symbol);
 setSymbol(item9Button, item9Symbol);
-resetSymbols();
