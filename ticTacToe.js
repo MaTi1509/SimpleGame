@@ -88,29 +88,14 @@ function setSymbol(itemButton, itemSymbol) {
 }
 
 function resetSymbol() {
-  item1Symbol.textContent = "P1";
-  item1Symbol.style.color = "white";
-  item2Symbol.textContent = "P2";
-  item2Symbol.style.color = "white";
-  item3Symbol.textContent = "P3";
-  item3Symbol.style.color = "white";
-  item4Symbol.textContent = "P4";
-  item4Symbol.style.color = "white";
-  item5Symbol.textContent = "P5";
-  item5Symbol.style.color = "white";
-  item6Symbol.textContent = "P6";
-  item6Symbol.style.color = "white";
-  item7Symbol.textContent = "P7";
-  item7Symbol.style.color = "white";
-  item8Symbol.textContent = "P8";
-  item8Symbol.style.color = "white";
-  item9Symbol.textContent = "P9";
-  item9Symbol.style.color = "white";
-  player1.style.backgroundColor = "#0080FF";
-  player1.style.color = "white";
-  player2.style.backgroundColor = "#FF4B4B";
-  player2.style.color = "white";
-  toggleSymbol();
+  const itemSymbols = [item1Symbol, item2Symbol, item3Symbol, item4Symbol, item5Symbol, item6Symbol, item7Symbol, item8Symbol, item9Symbol];
+  const fillSymbols = ["P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8", "P9"];
+
+  for (let index = 0; index < itemSymbols.length; index++) {
+    itemSymbols[index].textContent = fillSymbols[index];
+    itemSymbols[index].style.color = "white";
+  };
+  toggleSymbol(); 
 }
 
 function closeGameInfo() {
@@ -136,3 +121,4 @@ setSymbol(item6Button, item6Symbol);
 setSymbol(item7Button, item7Symbol);
 setSymbol(item8Button, item8Symbol);
 setSymbol(item9Button, item9Symbol);
+resetSymbols();
