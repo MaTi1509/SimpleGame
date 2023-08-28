@@ -85,11 +85,6 @@ function checkForWin() {
   }
 }
 
-function playerBackgorundColor(){
-  
-}
-
-
 function setSymbol(itemButton, itemSymbol) {
   itemButton.addEventListener("click", () => {
     itemSymbol.textContent = currentSymbol;
