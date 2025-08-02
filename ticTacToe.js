@@ -28,7 +28,6 @@ const player1Counter = document.querySelector(".player1Counter");
 const player2Counter = document.querySelector(".player2Counter");
 let winPlayer;
 let moveCounter = 0;
-let counter1 = 0;
 let isWin = false;
 let Player1Points = 0;
 let Player2Points = 0;
@@ -87,9 +86,15 @@ function checkForWin() {
 
 function setSymbol(itemButton, itemSymbol) {
   itemButton.addEventListener("click", () => {
+    if (isWin || moveCounter >= 9) {
+      return;
+    }
+    if (itemSymbol.textContent === "X" || itemSymbol.textContent === "O") {
+      return;
+    }
+
     itemSymbol.textContent = currentSymbol;
     itemSymbol.style.color = "black";
-    counter1 = 1;
     moveCounter++;
     console.log("move counter = " + moveCounter);
     checkForWin();
